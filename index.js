@@ -112,11 +112,7 @@ async function downloadVideo(videoUrl, name, url) {
     console.log(`Downloading video from: ${videoUrl}`);
     console.log(`Referer link: ${url}`)
     try {
-        const response = await fetch(videoUrl, {
-            headers: {
-                'Referer': url
-            }
-        });
+        const response = await fetch(videoUrl);
         console.log(`Response status: ${response.status}`);
         if (!response.ok) {
             throw new Error(`Failed to fetch video: ${response.statusText}`);
